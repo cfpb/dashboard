@@ -1,14 +1,15 @@
 {
-  "name": "mozaik-dashboard",
-  "description": "Mozaïk demo dashboard",
+  "name": "cf.gov-dashboard",
+  "description": "Consumerfinance.gov dashboard",
   "repository": {
     "type": "git",
-    "url": "git://github.com/plouc/mozaik-demo"
+    "url": "git://github.com/cfpb/dashboard"
   },
+  "private": "true",
   "license": "MIT",
   "author": {
-    "name": "Raphaël Benitte",
-    "url": "https://github.com/plouc"
+    "name": "Consumer Financial Protection Bureau",
+    "url": "https://cfpb.github.io/"
   },
   "engines": {
     "node": "0.12.x",
