@@ -19,11 +19,14 @@ var config = {
 
     // clients configs
     api: {
-        jenkins: {
-            baseUrl: process.env.MOZAIK_JENKINS_URL,
-            basicAuthUser: process.env.MOZAIK_JENKINS_USER,
-            basicAuthPassword: process.env.MOZAIK_JENKINS_PASSWORD
-        }
+        // aws: {
+        //     region: 'eu-west-1'
+        // },
+        // jenkins: {
+        //     baseUrl: process.env.MOZAIK_JENKINS_URL,
+        //     basicAuthUser: process.env.MOZAIK_JENKINS_USER,
+        //     basicAuthPassword: process.env.MOZAIK_JENKINS_PASSWORD
+        // }
     },
 
     // define duration between each dashboard rotation (ms)
@@ -41,16 +44,9 @@ var config = {
             rows:    6,
             widgets: [
                 {
-                    type: 'value.value',
-                    title: 'CF.gov JS Code Coverage',
-                    url: 'https://coveralls.io/github/cfpb/cfgov-refresh.json',
-                    pathCurrent: '$.coverage_change',
-                    pathLastUpdated: '$.created_at',
-                    // pathChangeRate: '$.changeRate',
-                    // lastUpdatedFormat: 'YYYY-MM-DDThh:mm:ssTZD',
-                    lastUpdatedFromNow: true,
-                    // prefix: '',
-                    postfix: '%',
+                    type: 'embed.markup',
+                    title: 'CF.gov Code Coverage',
+                    content: '<iframe width="100%" height="100%" src="http://files.consumerfinance.gov.s3.amazonaws.com/build/badges/badges.html" frameborder="0" allowfullscreen style="padding:1em 1em 4em" scrolling="no"></iframe>',
                     columns: 1, rows: 2,
                     x: 3, y: 4
                 },
