@@ -19,14 +19,11 @@ var config = {
 
     // clients configs
     api: {
-        // aws: {
-        //     region: 'eu-west-1'
-        // },
-        // jenkins: {
-        //     baseUrl: process.env.MOZAIK_JENKINS_URL,
-        //     basicAuthUser: process.env.MOZAIK_JENKINS_USER,
-        //     basicAuthPassword: process.env.MOZAIK_JENKINS_PASSWORD
-        // }
+        jenkins: {
+            baseUrl: process.env.MOZAIK_JENKINS_URL,
+            basicAuthUser: process.env.MOZAIK_JENKINS_USER,
+            basicAuthPassword: process.env.MOZAIK_JENKINS_PASSWORD
+        }
     },
 
     // define duration between each dashboard rotation (ms)
