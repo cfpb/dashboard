@@ -5,3 +5,4 @@ build
 .idea
 npm-debug.log*
 */badges.html
+*/badges.json
