@@ -8,6 +8,7 @@ from __future__ import print_function
 import sys
 import os
 import datetime
+import json
 
 import requests
 import boto
@@ -26,10 +27,11 @@ TEMPLATE = """
       font-size:1.5em; font-family: Montserrat, sans-serif; width:100%;
     }}
     img {{
-      width:105%; height:105%; display:block;
+      width:103%; height:103%; display:block;
     }}
     img.status {{ width:47%; height:47%; }}
     td {{ width:50%; }}
+    body {{ margin:0 }}
     </style>
 </head>
 <body>
@@ -80,11 +82,16 @@ def get_badges():
             BADGES['js'] = BADGE_URL.format(int(round(float(coverage), 2)))
         elif 'backend' in row.find('a').text:
             BADGES['python'] = BADGE_URL.format(int(round(float(coverage), 2)))
+    if not (BADGES['js'] and BADGES['python']):
+        print('No update -- only one set of tests were recorded')
+        return
     with open('badges.html', 'w') as f:
         content = TEMPLATE.format(BADGES['overall'],
                                   BADGES['js'],
                                   BADGES['python']).encode('utf-8')
         f.write(content)
+    with open('badges.json', 'w') as f:
+        f.write(json.dumps(BADGES))
     s3 = boto.connect_s3(S3_KEY, S3_SECRET,
                          calling_format=OrdinaryCallingFormat())
     bucket = s3.get_bucket(S3_BASE)
@@ -92,6 +99,7 @@ def get_badges():
     prep.content_type = 'text/plain'
     prep.set_contents_from_filename('badges.html')
     print('badges updated {}'.format(datetime.datetime.now()))
+    return
 
 if __name__ == "__main__":
     print('{} reporting for duty: {}'.format(sys.argv[0],
