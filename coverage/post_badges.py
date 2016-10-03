@@ -23,12 +23,12 @@ TEMPLATE = """
     <title>cfgov-refresh coverage badges</title>
     <style>
     table {{
-      font-size:1.9em; font-family: Montserrat, sans-serif; width:100%;
+      font-size:1.5em; font-family: Montserrat, sans-serif; width:100%;
     }}
     img {{
       width:105%; height:105%; display:block;
     }}
-    img.status {{ width:48%; height:48%; }}
+    img.status {{ width:47%; height:47%; }}
     td {{ width:50%; }}
     </style>
 </head>
