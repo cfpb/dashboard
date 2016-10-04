@@ -48,6 +48,8 @@ Thumbs.db
 __pycache__/
 *.py[cod]
 .env
+*/badges.html
+*/badges.json
 
 # Django #
 #################
