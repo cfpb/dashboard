@@ -42,16 +42,38 @@ var config = {
             widgets: [
                 {
                     type: 'embed.markup',
-                    title: 'CF.gov Code Coverage',
-                    content: '<iframe width="100%" height="100%" src="http://files.consumerfinance.gov.s3.amazonaws.com/build/badges/badges.html" frameborder="0" allowfullscreen style="padding:1em 1em 4em" scrolling="no"></iframe>',
+                    title: 'Active CF.gov Visitors',
+                    content: '<iframe src="' + process.env.MOZAIK_GA_EMBED_URL + '" width="100%" height="100%" scrolling="no" frameborder="no" style="padding:25px 10px 5%;background-color:white"></iframe>',
                     columns: 1, rows: 2,
-                    x: 3, y: 4
+                    x: 0, y: 0
+                },
+                // {
+                //     type: 'embed.markup',
+                //     title: 'Live Kitten Cam',
+                //     content: '<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/goHLjmgSuJk?rel=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen style="padding:1em 1em 4em"></iframe>',
+                //     columns: 1, rows: 2,
+                //     x: 1, y: 0
+                // },
+                {
+                    type: 'embed.markup',
+                    title: 'Live Puppy Cam',
+                    content: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/vmjDK1z_FUE?list=PLIFqWCuxNyoj8HAwNYOlqdDL52pNsbvKV?autoplay=1" frameborder="0" allowfullscreen style="padding:1em 1em 4em"></iframe>',
+                    columns: 1, rows: 2,
+                    x: 1, y: 0
                 },
                 {
-                    type: 'github.issue_labels_donut',
-                    repository: 'cfpb/cfgov-refresh',
-                    columns: 2, rows: 4,
+                    type: 'embed.markup',
+                    title: '404 and 500 errors',
+                    content: '<iframe src="' + process.env.MOZAIK_NR_EMBED_URL_6 + '" scrolling="no" frameborder="no" style="height:80%;width:90%;margin:-3em 5% 0" onload="setTimeout(function(){this.style.height=\'110%\'}.bind(this), 2000)"></iframe>',
+                    columns: 1, rows: 2,
                     x: 2, y: 0
+                },
+                {
+                    type: 'embed.markup',
+                    title: 'Mobile usage',
+                    content: '<iframe src="' + process.env.MOZAIK_NR_EMBED_URL_2 + '" scrolling="no" frameborder="no" style="height:80%;width:90%;margin:-3em 5% 0" onload="setTimeout(function(){this.style.height=\'110%\'}.bind(this), 2000)"></iframe>',
+                    columns: 1, rows: 2,
+                    x: 3, y: 0
                 },
                 // {
                 //     type: 'weather.weather',
@@ -63,20 +85,6 @@ var config = {
                 //     columns: 1, rows: 2,
                 //     x: 1, y: 0
                 // },
-                // {
-                //     type: 'embed.markup',
-                //     title: 'Live Puppy Cam',
-                //     content: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/vmjDK1z_FUE?list=PLIFqWCuxNyoj8HAwNYOlqdDL52pNsbvKV?autoplay=1" frameborder="0" allowfullscreen style="padding:1em 1em 4em"></iframe>',
-                //     columns: 1, rows: 2,
-                //     x: 1, y: 0
-                // },
-                {
-                    type: 'embed.markup',
-                    title: 'Live Kitten Cam',
-                    content: '<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/goHLjmgSuJk?rel=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen style="padding:1em 1em 4em"></iframe>',
-                    columns: 1, rows: 2,
-                    x: 1, y: 0
-                },
                 {
                     type: 'travis.build_histogram',
                     owner: 'cfpb',
@@ -84,33 +92,33 @@ var config = {
                     columns: 2, rows: 2,
                     x: 0, y: 2
                 },
-                // {
-                //     type: 'embed.markup',
-                //     title: 'Live Puppy Cam',
-                //     content: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/vmjDK1z_FUE?list=PLIFqWCuxNyoj8HAwNYOlqdDL52pNsbvKV?autoplay=1" frameborder="0" allowfullscreen style="padding:10px 10px 50px"></iframe>',
-                //     columns: 1, rows: 1,
-                //     x: 1, y: 0
-                // },
-                {
-                    type: 'embed.markup',
-                    title: 'Active CF.gov Visitors',
-                    content: '<iframe src="' + process.env.MOZAIK_GA_EMBED_URL + '" width="100%" height="100%" scrolling="no" frameborder="no" style="padding:25px 10px 5%;background-color:white"></iframe>',
-                    columns: 1, rows: 2,
-                    x: 0, y: 0
-                },
-                {
-                    type: 'embed.markup',
-                    title: 'CF.gov visitors on a mobile device',
-                    content: '<iframe src="' + process.env.MOZAIK_NR_EMBED_URL_2 + '" scrolling="no" frameborder="no" style="height:80%;width:90%;margin:-3em 5% 0" onload="setTimeout(function(){this.style.height=\'110%\'}.bind(this), 2000)"></iframe>',
-                    columns: 1, rows: 2,
-                    x: 0, y: 4
-                },
                 {
                     type: 'embed.markup',
                     title: 'Slowest CF.gov pages',
                     content: '<iframe src="' + process.env.MOZAIK_NR_EMBED_URL_1 + '" width="100%" height="100%" scrolling="no" frameborder="no" style="height:80%;width:90%;margin:-3em 5% 0" onload="setTimeout(function(){this.style.height=\'110%\'}.bind(this), 2000)"></iframe>',
                     columns: 2, rows: 2,
+                    x: 2, y: 2
+                },
+                {
+                    type: 'embed.markup',
+                    title: 'Slowest cities',
+                    content: '<iframe src="' + process.env.MOZAIK_NR_EMBED_URL_8 + '" width="100%" height="100%" scrolling="no" frameborder="no" style="height:80%;width:90%;margin:-3em 5% 0" onload="setTimeout(function(){this.style.height=\'110%\'}.bind(this), 2000)"></iframe>',
+                    columns: 1, rows: 2,
+                    x: 0, y: 4
+                },
+                {
+                    type: 'embed.markup',
+                    title: 'Most popular pages',
+                    content: '<iframe src="' + process.env.MOZAIK_NR_EMBED_URL_7 + '" width="100%" height="100%" scrolling="no" frameborder="no" style="height:80%;width:90%;margin:-3em 5% 0" onload="setTimeout(function(){this.style.height=\'110%\'}.bind(this), 2000)"></iframe>',
+                    columns: 2, rows: 2,
                     x: 1, y: 4
+                },
+                {
+                    type: 'embed.markup',
+                    title: 'CF.gov Code Coverage',
+                    content: '<iframe width="100%" height="100%" src="http://files.consumerfinance.gov.s3.amazonaws.com/build/badges/badges.html" frameborder="0" allowfullscreen style="padding:1em 1em 4em" scrolling="no"></iframe>',
+                    columns: 1, rows: 2,
+                    x: 3, y: 4
                 }
             ]
         },
